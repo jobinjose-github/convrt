@@ -20,7 +20,7 @@ jobs:
         working-directory: ./web
 
       - name: Build
-        run: npm run build -- --prod
+        run: npm run build --prod
         working-directory: ./web
 
       - name: Deploy to Firebase
