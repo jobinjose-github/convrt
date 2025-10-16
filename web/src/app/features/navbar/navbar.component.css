@@ -1,0 +1,89 @@
+.navbar-container {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 5rem;
+    z-index: 1000;
+    display: flex;
+    color: white;
+    padding: 0 3rem;
+    position: fixed;
+    align-items: center;
+    flex-direction: row;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.navbar-logo {
+    color: #82B293;
+    font-family: "KoHo", sans-serif;
+}
+
+.navbar-refs {
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-ref {
+    list-style: none;
+    margin-right: 3rem;
+}
+
+.navbar-ref a {
+    color: white;
+    font-family: poppins;
+    text-decoration: none;
+}
+
+.navbar-refs-hidden {
+    display: flex;
+}
+
+.material-symbols-rounded {
+    display: none;  
+}
+
+@media (max-width: 900px) {
+    .navbar-logo {
+        font-size: 1.3rem;
+    }
+
+    .navbar-refs-hidden {
+        display: none;
+    }
+
+    .navbar-refs {
+        position:absolute;
+        top: 4rem;
+        right: 1.2rem;
+        display: flex;
+        height: 16rem;
+        width: 6rem;
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-container {
+        padding: 0rem 1.5rem;
+    }
+
+    .navbar-ref a {
+        color: rgb(255, 255, 255);
+    }
+
+    .material-symbols-rounded {
+        display: flex;
+        font-size: 1.8rem;  
+    }
+    
+    .navbar-ref {
+        width: 6rem;
+    }
+}

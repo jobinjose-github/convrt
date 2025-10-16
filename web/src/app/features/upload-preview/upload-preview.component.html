@@ -1,0 +1,38 @@
+<div class="upload-preview-container">
+    <div class="preview-container-nav">
+        <button class="upload-preview-convert-button" (click)="convertFile()">
+            Convert Now
+        </button>
+        <span class="material-symbols-rounded" (click)="closePreview.emit()">
+            close
+        </span>
+    </div>
+    <br><br>
+    <div class="upload-preview-convert">
+        <select id="source-type" (change)="onSelectionChange($event)">
+            <option *ngFor="let opt of sourceFileOptions" [value]="opt">{{ opt }}</option>
+        </select>
+        <span class="material-symbols-rounded">
+            arrow_forward
+        </span>
+        <select id="dest-type" (change)="onSelectionChange($event)">
+            <option *ngFor="let opt of destFileOptions" [value]="opt">{{ opt }}</option>
+        </select>
+    </div>
+    <br>
+    <ul class="preview-container-body">
+        @for (file of fileData; track file){
+        <li class="preview-file-list-item">
+            <span class="preview-file-list-name">
+                <span class="material-symbols-rounded"
+                    [ngClass]="isFileSelected(file.id) ? 'file-select-success' : 'file-select-error'">
+                    check_circle
+                </span>
+                &nbsp;&nbsp;&nbsp;{{ file.fileName | truncateMiddle:25:11:11 }}
+            </span>
+            <span class="preview-file-list-size">{{ file.fileSize | kbToMb:2 }}</span>
+        </li>
+
+        }
+    </ul>
+</div>

@@ -1,0 +1,9 @@
+{
+    "name": "convrt",
+    "version": "0.1.0",
+    "scripts": {
+        "ng": "ng",
+        "start-frontend": "cd web && ng serve",
+        "start": "npm run start-frontend"
+    }
+}

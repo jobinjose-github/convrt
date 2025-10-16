@@ -1,0 +1,17 @@
+.footer-container {
+    width: 100vw;
+    height: 2rem;
+    text-align: center;
+    background-color: transparent;
+}
+
+.footer-container p {
+    color: rgb(62, 81, 79);
+    font-family: poppins;
+}
+
+@media (max-width: 900px) {
+    .footer-container {
+        display: none;
+    }
+}
