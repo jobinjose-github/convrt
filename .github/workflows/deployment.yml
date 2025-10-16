@@ -17,8 +17,5 @@ jobs:
       run: cd web && npm ci
     - name: Build
       run: cd web && npm run build --prod
-    - uses: w9jds/firebase-action@master
-      with:
-        args: deploy --only hosting
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+    - name: Deploy to Firebase Hosting
+      run: cd web && npx firebase deploy --only hosting --token ${{ secrets.FIREBASE_TOKEN }}
