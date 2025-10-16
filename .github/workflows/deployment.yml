@@ -16,13 +16,13 @@ jobs:
           node-version: '22'
 
       - name: Install dependencies
-        run: npm ci
-        working-directory: ./web
+        run: cd web && npm ci
+
+      - name: Install Firebase CLI
+        run: cd web && npm install --save-dev firebase-tools
 
       - name: Build
-        run: npm run build --prod
-        working-directory: ./web
+        run: cd web && npm run build --prod
 
-      - name: Deploy to Firebase
-        run: npx firebase deploy --only hosting --token ${{ secrets.FIREBASE_TOKEN }}
-        working-directory: ./web
+      - name: Deploy to Firebase Hosting
+        run: cd web && npx firebase deploy --only hosting --token ${{ secrets.FIREBASE_TOKEN }}
