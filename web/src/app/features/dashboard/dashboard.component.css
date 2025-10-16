@@ -1,0 +1,97 @@
+.dashboard-container {
+    width: 100vw;
+    display: flex;
+    overflow-y: auto;
+    padding-top: 5rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: calc(100vh - 8rem);
+}
+
+.dashboard-heading {
+    font-size: 2.8rem;
+    color: white;
+    font-family: poppins;
+    text-align: center;
+}
+
+.dashboard-subheading {
+    font-size: 1.2rem;
+    color: rgb(19, 98, 75);
+    font-family: poppins;
+    text-align: center;
+}
+
+.drop-box {
+    width: 18vw;
+    height: 18vh;
+    max-width: 18rem;
+    max-height: 10rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.drop-box:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transition: background 0.5s ease;
+}
+
+.material-symbols-rounded {
+    color: white;
+    font-size: 3rem;
+}
+
+.drop-box p {
+    color: rgb(71, 116, 103);
+    font-family: poppins;
+}
+
+.drop-box.dragover {
+  border-color: #FFAB94;
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .drop-box {
+        width: 50vw;
+        height: 18vh;
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dashboard-container {
+        width: 100vw;
+        display: flex;
+        overflow-y: auto;
+        padding-top: 5rem;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        min-height: calc(100vh - 10rem);
+    }
+
+    .breaker {
+        display: none;
+    }
+
+    .dashboard-subheading {
+        font-size: 1rem;
+    }
+}

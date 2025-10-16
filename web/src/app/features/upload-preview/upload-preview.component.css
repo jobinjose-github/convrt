@@ -1,0 +1,123 @@
+.upload-preview-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 25%;
+    z-index: 1000;
+    left: 50%;
+    transform: translate(-50%, 25%);
+    width: 40vw;
+    height: 70vh;
+    border-radius: 2rem;
+    border: 0.5px solid rgba(255, 255, 255, 0.092);
+    padding: 2rem 2rem 0rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.preview-container-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-align: right;
+}
+
+.upload-preview-convert-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    border: none;
+    background-color: rgba(14, 184, 104, 0.277);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.preview-container-nav span {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.preview-container-body {
+    flex: 1;
+    overflow-y: scroll;
+}
+
+.preview-file-list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 88%;
+    height: 2rem;
+    background-color: rgba(4, 6, 4, 0.318);
+    border-radius: 0.4rem;
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    color: white;
+    font-family: poppins;
+    font-size: 0.8rem;
+}
+
+.upload-preview-convert {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 4rem;
+}
+
+.upload-preview-convert select {
+    width: 45%;
+    height: 3rem;
+    border-radius: 1rem;
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.54);
+    color: white;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='12' viewBox='0 0 20 20' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M5.516 7.548L10 12.032l4.484-4.484L16 8.564l-6 6-6-6z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    cursor: pointer;
+}
+
+.material-symbols-rounded {
+    color: white;
+}
+
+.file-select-success {
+    color: rgba(31, 160, 31, 0.46);
+}
+
+.file-select-error {
+    color: rgba(205, 33, 33, 0.549);
+}
+
+.preview-file-select {
+    accent-color: rgb(76, 150, 235);
+    cursor: not-allowed;
+}
+
+.preview-file-list-name {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .upload-preview-container {
+        width: 80vw;
+        height: 80vh;
+    }
+}
