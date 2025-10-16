@@ -1,0 +1,14 @@
+<div class="dashboard-container">
+    <h1 class="dashboard-heading">One tool<br>Every format you need</h1>
+    <br><br>
+    <p class="dashboard-subheading">Instantly transform your file.<br>Choose the format and download in a snap</p>
+    <br><br><br class="breaker"><br class="breaker"><br class="breaker">
+    <div class="drop-box" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)"
+        [class.dragover]="isDragging" (click)="fileInput.click()">
+        <span class="material-symbols-rounded">upload</span>
+        <p>Drop files</p>
+        <input type="file" #fileInput (change)="onFileSelect($event)" multiple hidden />
+    </div>
+    <app-upload-preview *ngIf="showUploadPreview" [fileData]="uploadedFiles" (closePreview) = "closePreviewButton()"></app-upload-preview>
+    <br>
+</div>

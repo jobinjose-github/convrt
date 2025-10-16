@@ -1,0 +1,9 @@
+<div class="navbar-container">
+    <h1 class="navbar-logo">CONVRT</h1>
+    <span class="material-symbols-rounded" (click)="toggleHamburger()">dehaze</span>
+    <ul [ngClass]="isHamburgerActive? 'navbar-refs': 'navbar-refs-hidden'">
+        @for (ref of refsTable; track ref) {
+            <li class="navbar-ref" (click)="toggleHamburger()"><a routerLink="{{ref.path}}">{{ref.title}}</a></li>
+        }
+    </ul>
+</div>
