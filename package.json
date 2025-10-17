@@ -1,6 +1,7 @@
 {
     "name": "convrt",
     "version": "0.1.0",
+    "author": {"name": "Jobin", "email": "jobinjose.in@gmail.com", "url": "https://jobinjose.in"},
     "scripts": {
         "ng": "ng",
         "start-frontend": "cd web && ng serve",
