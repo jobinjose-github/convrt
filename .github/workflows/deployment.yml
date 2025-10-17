@@ -26,3 +26,39 @@ jobs:
 
       - name: Deploy to Firebase Hosting
         run: cd web && npx firebase deploy --only hosting --token ${{ secrets.FIREBASE_TOKEN }}
+
+  web-api:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          mkdir -p package
+          pip3 install -r api/requirements.txt -t package/
+
+      - name: Install zip tool
+        uses: montudor/action-zip@v1
+
+      - name: Create Zip file for Lambda function
+        run: |
+          cd package
+          cp -r ../web/* .
+          zip -r ../code.zip .
+
+      - name: AWS CLI v2
+        uses: imehedi/actions-awscli-v2@latest
+        with:
+          args: "lambda update-function-code \
+            --function-name arn:aws:lambda:us-east-1:862567259491:function:convrt-api \
+            --zip-file fileb://code.zip"
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: "us-east-1"
