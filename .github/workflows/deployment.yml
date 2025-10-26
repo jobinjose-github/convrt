@@ -49,7 +49,7 @@ jobs:
       - name: Create Zip file for Lambda function
         run: |
           cd package
-          cp -r ../api/* .
+          cp -r ../api/src/* .
           zip -r ../code.zip .
 
       - name: AWS CLI v2
