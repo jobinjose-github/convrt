@@ -1,10 +1,18 @@
 {
     "name": "convrt",
     "version": "0.1.0",
-    "author": {"name": "Jobin", "email": "jobinjose.in@gmail.com", "url": "https://jobinjose.in"},
+    "author": {
+        "name": "Jobin",
+        "email": "jobinjose.in@gmail.com",
+        "url": "https://jobinjose.in"
+    },
     "scripts": {
         "ng": "ng",
         "start-frontend": "cd web && ng serve",
-        "start": "npm run start-frontend"
+        "start-backend": "cd api/src && uv run main.py",
+        "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\""
+    },
+    "devDependencies": {
+        "concurrently": "^9.2.1"
     }
 }
