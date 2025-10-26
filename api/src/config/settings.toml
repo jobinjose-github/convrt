@@ -1,0 +1,14 @@
+[app]
+app_id = "Convrt"
+
+[security]
+secret_key = ""
+algorithm = ""
+expire_delta = 7200
+pswd_encrypt_scheme = ""
+
+[database]
+db_name = ""
+db_tls = ""
+db_tls_allow_invalid_cert = ""
+db_url = ""
